@@ -1,7 +1,6 @@
-class ContactHelper:
+from fixture.manager import Manager
 
-    def __init__(self, app):
-        self.app = app
+class ContactHelper(Manager):
 
     def create(self, contact):
         wd = self.app.wd

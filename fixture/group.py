@@ -1,7 +1,6 @@
-class GroupHelper:
+from fixture.manager import Manager
 
-    def __init__(self, app):
-        self.app = app
+class GroupHelper(Manager):
 
     def open_group_page(self):
         wd = self.app.wd
