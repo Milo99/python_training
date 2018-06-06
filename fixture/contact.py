@@ -90,7 +90,7 @@ class ContactHelper(Manager):
         wd.find_element_by_name("lastname").click()
         wd.find_element_by_name("lastname").clear()
         wd.find_element_by_name("lastname").send_keys(contact.lastname)
-        # submit contact edition
+        # submit contact update
         wd.find_element_by_name("update").click()
         self.app.go_back_to_home_page()
 
