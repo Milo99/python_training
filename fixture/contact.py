@@ -62,3 +62,8 @@ class ContactHelper(Manager):
             wd.find_element_by_name(field_name).click()
             wd.find_element_by_name(field_name).clear()
             wd.find_element_by_name(field_name).send_keys(text)
+
+    def count(self):
+        wd = self.app.wd
+        self.app.go_back_to_home_page()
+        return len(wd.find_elements_by_name("selected[]"))
