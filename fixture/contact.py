@@ -4,6 +4,8 @@ class ContactHelper(Manager):
 
     def create(self, contact):
         wd = self.app.wd
+        # open home page
+        self.app.go_back_to_home_page()
         # init contact creation
         wd.find_element_by_link_text("add new").click()
         self.fill_contact_form(contact)
@@ -13,6 +15,8 @@ class ContactHelper(Manager):
 
     def modify_first_contact(self, new_contact_data):
         wd = self.app.wd
+        # open home page
+        self.app.go_back_to_home_page()
         # init contact update
         wd.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img").click()
         self.fill_contact_form(new_contact_data)
@@ -22,6 +26,8 @@ class ContactHelper(Manager):
 
     def delete_first_contact(self):
         wd = self.app.wd
+        # open home page
+        self.app.go_back_to_home_page()
         # select first contact
         wd.find_element_by_name("selected[]").click()
         # submit deletion
