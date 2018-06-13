@@ -11,7 +11,6 @@ class ContactHelper(Manager):
         self.fill_contact_form(contact)
         # submit contact creation
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
-        self.app.display_home_page()
 
     def modify_first_contact(self, new_contact_data):
         wd = self.app.wd
@@ -22,7 +21,6 @@ class ContactHelper(Manager):
         self.fill_contact_form(new_contact_data)
         # submit contact update
         wd.find_element_by_name("update").click()
-        self.app.display_home_page()
 
     def delete_first_contact(self):
         wd = self.app.wd
