@@ -6,7 +6,6 @@ from fixture.contact import ContactHelper
 class Application:
     def __init__(self):
         self.wd = WebDriver(capabilities={"marionette": False})
-        self.wd.implicitly_wait(5)
         self.session = SessionHelper(self)
         self.group = GroupHelper(self)
         self.contact = ContactHelper(self)
@@ -25,6 +24,6 @@ class Application:
     def destroy(self):
         self.wd.quit()
 
-    def go_back_to_home_page(self):
+    def display_home_page(self):
         wd = self.wd
         wd.find_element_by_link_text("home").click()
