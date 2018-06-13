@@ -5,7 +5,7 @@ class ContactHelper(Manager):
     def create(self, contact):
         wd = self.app.wd
         # open home page
-        self.app.display_home_page()
+        self.display_home_page()
         # init contact creation
         wd.find_element_by_link_text("add new").click()
         self.fill_contact_form(contact)
@@ -15,7 +15,7 @@ class ContactHelper(Manager):
     def modify_first_contact(self, new_contact_data):
         wd = self.app.wd
         # open home page
-        self.app.display_home_page()
+        self.display_home_page()
         # init contact update
         wd.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img").click()
         self.fill_contact_form(new_contact_data)
@@ -25,7 +25,7 @@ class ContactHelper(Manager):
     def delete_first_contact(self):
         wd = self.app.wd
         # open home page
-        self.app.display_home_page()
+        self.display_home_page()
         # select first contact
         wd.find_element_by_name("selected[]").click()
         # submit deletion
@@ -33,7 +33,6 @@ class ContactHelper(Manager):
         wd.switch_to_alert().accept()
 
     def fill_contact_form(self, contact):
-        # wd = self.app.wd
         self.change_field_value("firstname", contact.firstname)
         self.change_field_value("middlename", contact.middlename)
         self.change_field_value("lastname", contact.lastname)
@@ -63,5 +62,11 @@ class ContactHelper(Manager):
 
     def count(self):
         wd = self.app.wd
-        self.app.display_home_page()
+        self.display_home_page()
         return len(wd.find_elements_by_name("selected[]"))
+
+
+    def display_home_page(self):
+        wd = self.app.wd
+        if not (wd.current_url.endswith("/addressbook/") and len(wd.find_elements_by_name("searchform")) > 0):
+            wd.find_element_by_link_text("home").click()

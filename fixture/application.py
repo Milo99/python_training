@@ -24,7 +24,3 @@ class Application:
     def destroy(self):
         self.wd.quit()
 
-    def display_home_page(self):
-        wd = self.wd
-        if not (wd.current_url.endswith("/addressbook/") and len(wd.find_elements_by_name("searchform")) > 0):
-            wd.find_element_by_link_text("home").click()
