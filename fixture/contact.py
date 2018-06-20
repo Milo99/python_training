@@ -1,4 +1,5 @@
 from fixture.manager import Manager
+from model.contact import Contact
 
 class ContactHelper(Manager):
 
@@ -70,3 +71,15 @@ class ContactHelper(Manager):
         wd = self.app.wd
         if not (wd.current_url.endswith("/addressbook/") and len(wd.find_elements_by_name("searchform")) > 0):
             wd.find_element_by_link_text("home").click()
+
+
+    def get_contact_list(self):
+        wd = self.app.wd
+        self.display_home_page()
+        contacts = []
+        for element in wd.find_elements_by_name("entry"):
+            text1 = element.find_element_by_xpath("./td[2]").text
+            text2 = element.find_element_by_xpath("./td[3]").text
+            id = element.find_element_by_name("selected[]").get_attribute("value")
+            contacts.append(Contact(firstname=text2, lastname=text1, id=id))
+        return contacts
