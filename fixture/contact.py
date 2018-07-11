@@ -29,6 +29,17 @@ class ContactHelper(Manager):
         wd.find_element_by_name("update").click()
         self.contact_cache = None
 
+    def modify_contact_by_id(self, id, new_contact_data):
+        wd = self.app.wd
+        # open home page
+        self.display_home_page()
+        # init contact update
+        wd.find_element_by_css_selector("a[href='edit.php?id=%s']" % id).click()
+        self.fill_contact_form(new_contact_data)
+        # submit contact update
+        wd.find_element_by_name("update").click()
+        self.contact_cache = None
+
     def delete_first_contact(self):
         self.delete_contact_by_index(0)
 
@@ -41,6 +52,19 @@ class ContactHelper(Manager):
         # submit deletion
         wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
         wd.switch_to_alert().accept()
+        self.display_home_page()
+        self.contact_cache = None
+
+    def delete_contact_by_id(self, id):
+        wd = self.app.wd
+        # open home page
+        self.display_home_page()
+        # select first contact
+        wd.find_element_by_id(id).click()
+        # submit deletion
+        wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
+        wd.switch_to_alert().accept()
+        self.display_home_page()
         self.contact_cache = None
 
     def fill_contact_form(self, contact):
@@ -94,12 +118,12 @@ class ContactHelper(Manager):
                 firstname = cells[2].text
                 lastname = cells[1].text
                 id = cells[0].find_element_by_tag_name("input").get_attribute("value")
-                all_phones = cells[5].text #.splitlines()
-                address = cells[3].text
-                all_emails = cells[4].text
-                self.contact_cache.append(Contact(firstname=firstname, lastname=lastname, id=id,
-                                                  all_phones_from_home_page=all_phones, address=address,
-                                                  all_emails_from_home_page=all_emails))
+                #all_phones = cells[5].text #.splitlines()
+                #address = cells[3].text
+                #all_emails = cells[4].text
+                self.contact_cache.append(Contact(firstname=firstname, lastname=lastname, id=id))
+                                                  #,all_phones_from_home_page=all_phones, address=address,
+                                                  #all_emails_from_home_page=all_emails))
         return list(self.contact_cache)
 
     def open_contact_to_edit_by_index(self, index):
