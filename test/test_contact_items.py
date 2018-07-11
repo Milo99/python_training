@@ -1,15 +1,21 @@
 import re
-from random import randrange
+from model.contact import Contact
+#from random import randrange
 
-def test_contact_items_on_home_page(app):
+def test_contact_items_on_home_page(app, db):
     contacts_from_home_page = app.contact.get_contact_list()
-    index = randrange(len(contacts_from_home_page))
-    contact_from_edit_page = app.contact.get_contact_info_from_edit_page(index)
-    assert contacts_from_home_page[index].lastname == contact_from_edit_page.lastname
-    assert contacts_from_home_page[index].firstname == contact_from_edit_page.firstname
-    assert contacts_from_home_page[index].address == contact_from_edit_page.address
-    assert contacts_from_home_page[index].all_emails_from_home_page == marge_emails_like_on_home_page(contact_from_edit_page)
-    assert contacts_from_home_page[index].all_phones_from_home_page == marge_phones_like_on_home_page(contact_from_edit_page)
+    contact_from_db = db.get_contact_list()
+    assert sorted(contacts_from_home_page, key=Contact.id_or_max) == sorted(contact_from_db, key=Contact.id_or_max)
+
+#def test_contact_items_on_home_page(app):
+#    contacts_from_home_page = app.contact.get_contact_list()
+#    index = randrange(len(contacts_from_home_page))
+#    contact_from_edit_page = app.contact.get_contact_info_from_edit_page(index)
+#    assert contacts_from_home_page[index].lastname == contact_from_edit_page.lastname
+#    assert contacts_from_home_page[index].firstname == contact_from_edit_page.firstname
+#    assert contacts_from_home_page[index].address == contact_from_edit_page.address
+#    assert contacts_from_home_page[index].all_emails_from_home_page == marge_emails_like_on_home_page(contact_from_edit_page)
+#    assert contacts_from_home_page[index].all_phones_from_home_page == marge_phones_like_on_home_page(contact_from_edit_page)
 
 #def test_phone_on_contact_view_page(app):
 #    contact_from_view_page = app.contact.get_contact_from_view_page(0)
