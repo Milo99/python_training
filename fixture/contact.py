@@ -15,6 +15,17 @@ class ContactHelper(Manager):
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
         self.contact_cache = None
 
+    def add_to_group(self, contact, group):
+        wd = self.app.wd
+        # open home page
+        self.display_home_page()
+        # select contact
+        wd.find_element_by_css_selector("input[value='%s']" % contact.id).click()
+        # select group
+        wd.find_element_by_css_selector("div.right option[value='%s']" % group.id).click()
+        # add contact to group
+        wd.find_element_by_name("add").click()
+
     def modify_first_contact(self):
         self.modify_contact_by_index(0)
 
@@ -66,6 +77,17 @@ class ContactHelper(Manager):
         wd.switch_to_alert().accept()
         self.display_home_page()
         self.contact_cache = None
+
+    def delete_from_group(self, contact, group):
+        wd = self.app.wd
+        # open home page
+        self.display_home_page()
+        # display contacts from group
+        wd.find_element_by_css_selector("form#right option[value='%s']" % group.id).click()
+        # select contact to delete
+        wd.find_element_by_css_selector("input[value='%s']" % contact.id).click()
+        # delete contact from group
+        wd.find_element_by_name("remove").click()
 
     def fill_contact_form(self, contact):
         self.change_field_value("firstname", contact.firstname)
