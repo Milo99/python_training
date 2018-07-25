@@ -1,0 +1,50 @@
+{
+  "uid" : "afe8ac44d6077a10",
+  "name" : "test_add_group[None:name`V[:headeresgJc6,4i)]rZC:footer[ _d$) :wvSJ21p]",
+  "title" : "Test add group [None:name`V[:headeresgJc6,4i)]rZC:footer[ _d$) :wvSJ21p]",
+  "time" : {
+    "start" : 1532534380577,
+    "stop" : 1532534381420,
+    "duration" : 843
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "suite" : {
+    "uid" : "b32805a1eaa65f11",
+    "name" : "test.test_add_group",
+    "title" : "Test add group"
+  },
+  "steps" : [ ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "testIds" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "SSC-10KAKS"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "suite-title",
+    "value" : null
+  }, {
+    "name" : "thread",
+    "value" : "15912-MainThread"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "suite-name",
+    "value" : "test.test_add_group"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  } ],
+  "parameters" : [ ]
+}

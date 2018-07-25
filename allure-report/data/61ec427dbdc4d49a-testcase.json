@@ -1,0 +1,95 @@
+{
+  "uid" : "61ec427dbdc4d49a",
+  "name" : "test_add_group[None:name`V[:headeresgJc6,4i)]rZC:footer[ _d$) :wvSJ21p]",
+  "title" : "Test add group [None:name`V[:headeresgJc6,4i)]rZC:footer[ _d$) :wvSJ21p]",
+  "time" : {
+    "start" : 1532535434079,
+    "stop" : 1532535434895,
+    "duration" : 816
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 3
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "suite" : {
+    "uid" : "5c4fee36062bf83",
+    "name" : "test.test_add_group",
+    "title" : "Test add group"
+  },
+  "steps" : [ {
+    "name" : "Given a group list",
+    "title" : "Given a group list",
+    "time" : {
+      "start" : 1532535434136,
+      "stop" : 1532535434139,
+      "duration" : 3
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "When I add a group None:name`V[:headeresgJc6,4i)]rZC:footer[ _d$) :wvSJ21p to the list",
+    "title" : "When I add a group None:name`V[:headeresgJc6,4i)]rZC:footer[ _d$) :wvSJ21p to the list",
+    "time" : {
+      "start" : 1532535434139,
+      "stop" : 1532535434892,
+      "duration" : 753
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "Then the new group list is equal to the olf list with the added group",
+    "title" : "Then the new group list is equal to the olf list with the added group",
+    "time" : {
+      "start" : 1532535434892,
+      "stop" : 1532535434894,
+      "duration" : 2
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  } ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "testIds" : [ ],
+  "labels" : [ {
+    "name" : "thread",
+    "value" : "14936-MainThread"
+  }, {
+    "name" : "host",
+    "value" : "SSC-10KAKS"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "suite-title",
+    "value" : null
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "suite-name",
+    "value" : "test.test_add_group"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  } ],
+  "parameters" : [ ]
+}

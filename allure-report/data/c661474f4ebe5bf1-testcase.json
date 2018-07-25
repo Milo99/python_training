@@ -1,0 +1,50 @@
+{
+  "uid" : "c661474f4ebe5bf1",
+  "name" : "test_add_group[None:name:header-r LI:footer#E\\\\>o9 Z\"W E]",
+  "title" : "Test add group [None:name:header-r LI:footer#E\\\\>o9 Z\"W E]",
+  "time" : {
+    "start" : 1532534379744,
+    "stop" : 1532534380576,
+    "duration" : 832
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "suite" : {
+    "uid" : "b32805a1eaa65f11",
+    "name" : "test.test_add_group",
+    "title" : "Test add group"
+  },
+  "steps" : [ ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "testIds" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "SSC-10KAKS"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "suite-title",
+    "value" : null
+  }, {
+    "name" : "thread",
+    "value" : "15912-MainThread"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "suite-name",
+    "value" : "test.test_add_group"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  } ],
+  "parameters" : [ ]
+}
